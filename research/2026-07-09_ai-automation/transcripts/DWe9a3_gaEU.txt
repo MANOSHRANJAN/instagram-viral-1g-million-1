@@ -1,0 +1,11 @@
+ Combining Claude code with Notebook LM is actually a massive AI cheat code that is going
+ to automate so much of your content creation. I'm going to show you how you can configure this
+ in under 60 seconds. Now, if you're unfamiliar with Notebook LM, it's essentially a free AI
+ platform from Google that functions as a second AI brain. And you can deploy it to study any subject
+ and output and credible podcasts, video demos and infographics. But Notebook LM lacks a public
+ API. So how do we link it to Claude code? I recently discovered this repository called Notebook
+ LM pi. All you need to do is install the skill and that will enable you to execute a task and
+ notebook LM from Claude code, which gives you insane power. If you want to level up even further,
+ build a research agent modeled on either yourself or your company and use it to research and create
+ unlimited amounts of content in your niche. If you want to link to this repository and a quick
+ start guide to set it up. Just comment "Lm" and I'll fire it over.

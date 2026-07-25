@@ -1,0 +1,39 @@
+# ---- Secrets / API keys (NEVER commit) ----
+*.env
+!*.env.example
+.env
+.env.*
+
+# ---- Python ----
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# ---- Node ----
+node_modules/
+package-lock.json
+npm-debug.log*
+yarn-error.log*
+
+# ---- Large binaries / models (too big for git; re-downloadable) ----
+*.bin
+ig-research/models/
+*.mp3
+*.wav
+*.mp4
+*.mov
+
+# ---- Scrape data: keep structure but not heavy media ----
+research/**/post-screenshots/
+research/**/hook-screenshots/
+
+# ---- OS / editor junk ----
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# ---- Misc generated ----
+kiro_api_result.html

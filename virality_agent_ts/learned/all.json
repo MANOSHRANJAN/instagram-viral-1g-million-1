@@ -1,0 +1,113 @@
+[
+  {
+    "url": "file:///tmp/test_jsram_one/From Klickpin.com- From beginner to obsessed Build these fresh weekend DIY ideas youll want to recreate this weekend for a stylish result that sti (1).mp4",
+    "source": "local-file",
+    "duration_seconds": 38,
+    "hook_frame_count": 20,
+    "scene_frame_count": 11,
+    "transcript": "",
+    "analysis": {
+      "hook": {
+        "first_3_seconds": "if you're still doing cold outreach...",
+        "visual_hook": "Near-black screen with low-contrast animated text fading in word by word ('if you're still doing' / 'outreach') over a dim phone/DM mockup. Text is barely legible against the dark background.",
+        "hook_type": "call_out",
+        "word_count": 14,
+        "negative_framing": true,
+        "numbered_or_listicle": false,
+        "status_proof_in_first_10s": false,
+        "why_it_grabs": "The 'you're falling behind in 2025' loss-framing calls out a specific behavior (cold outreach) and threatens status, which is a scroll-stopper for the niche it targets. But the murky, unreadable visual kneecaps the grab in the critical first second."
+      },
+      "structure": {
+        "skeleton": "other",
+        "beats": [
+          "Call-out: 'if you're still doing cold outreach'",
+          "Identity tag: 'as a video editor'",
+          "Threat/loss: 'you're falling behind'",
+          "Time stamp: 'in 2025'",
+          "Payoff label re-emphasized: 'cold outreach'"
+        ],
+        "cuts_per_10s_estimate": 6,
+        "fulfills_hook_promise": false,
+        "reinforcement_cycles_count": 1,
+        "cta_placement": "none",
+        "_note": "Frames only show the kinetic-text hook build. No visible body/solution or CTA, so promise fulfillment cannot be confirmed and reads as hook-only tease."
+      },
+      "audience_match": {
+        "score_0_25": 1,
+        "fits_locked_avatar": false,
+        "reasoning": "The locked avatar is Mike, a 38yo plumbing business owner who is tech-scared and losing leads to voicemail. This piece explicitly addresses 'video editors' doing 'cold outreach' — a completely different ICP. Nothing in this reel serves Mike in THIS piece.",
+        "topic_drift_warning": "Reel targets video editors / freelancer outreach; avatar is a plumbing business owner. Wrong industry, wrong pain, wrong intent."
+      },
+      "attention_25": {
+        "score": 10,
+        "checks": {
+          "hook_under_12_words": false,
+          "negative_or_numbered_framing": true,
+          "specific_number_or_named_entity": true,
+          "status_proof_or_power_promise": true,
+          "easy_visual_paired_with_hook": false
+        },
+        "notes": "hook_under_12_words FAIL (Brock: '5–12 word hooks' — this runs ~14). easy_visual_paired_with_hook FAIL (Brock 'drunk grandma' simplicity — the near-black, low-contrast text is nearly unreadable, killing the visual pairing)."
+      },
+      "retention_25": {
+        "score": 9,
+        "checks": {
+          "hook_promise_kept_in_body": false,
+          "cuts_every_2s_or_faster": true,
+          "uses_hormozi_skeleton": false,
+          "stacks_reinforcement_cycles": false,
+          "total_seconds_optimized_not_just_completion": false
+        },
+        "notes": "hook_promise_kept_in_body FAIL (Hormozi 1M 'fulfill the promise' — frames show only the threat build, no visible payoff/solution). uses_hormozi_skeleton FAIL (no hook→question→hammer→example structure evident). stacks_reinforcement_cycles FAIL (single loss-loop). total_seconds_optimized FAIL (Mosseri: total watch time tracked — a hook-only tease without delivered value won't hold 38s)."
+      },
+      "distribution_25": {
+        "score": 9,
+        "checks": {
+          "send_worthy_to_one_person": false,
+          "shareable_broadcast": true,
+          "save_worthy_reference": false,
+          "watch_time_seconds_estimate": 12,
+          "originality_not_aggregation": false
+        },
+        "notes": "Mosseri ranks send>save>watch_time. send_worthy_to_one_person FAIL — no human-to-human 'this is you' specificity worth a 1:1 DM. save_worthy FAIL — no reference value delivered. originality_not_aggregation FAIL (Mosseri: rewards original content — this is a generic dark kinetic-text template with a recycled fearmonger angle). shareable_broadcast PASSES weakly as a 'controversial/timely' opinion (Brock) but only inside the wrong niche."
+      },
+      "conversion_25": {
+        "score": 3,
+        "checks": {
+          "cta_present": false,
+          "cta_in_3_places_or_strong_single": false,
+          "cta_matches_avatar_intent": false,
+          "specificity_over_vague": false,
+          "no_engagement_bait_violation": true
+        },
+        "notes": "cta_present FAIL (no visible CTA in frames). cta_matches_avatar_intent FAIL (even a CTA would target video editors, not Mike). specificity_over_vague FAIL (Brock 'R - Relatable': 'falling behind' with no concrete mechanism or number is vague)."
+      },
+      "kill_list_violations": [
+        "vague",
+        "aggregated/unoriginal"
+      ],
+      "virality_score": {
+        "score_0_100": 31,
+        "drivers": [
+          "Brock: negative framing — 'you're falling behind in 2025' is a fear/loss hook that triggers controversial-alignment sharing",
+          "Mosseri: a clear time-stamped take ('in 2025') gives it timely/newsworthy framing",
+          "Hormozi 1M: tight kinetic-text pacing keeps cuts under 2s"
+        ],
+        "leaks": [
+          "Brock 'drunk grandma' rule — the near-black, low-contrast visual makes the hook physically hard to read in the first 3 seconds, the single biggest reach killer here",
+          "Hormozi 1M 'fulfill the promise' — frames show only the threat, no delivered solution, so retention and send-worthiness collapse",
+          "HARD GATE: topic drift — this serves video editors, not the locked plumbing-owner avatar, so the 100 is capped at 60 and cascade dies"
+        ]
+      },
+      "topic": "fear-based call-out telling video editors that cold outreach is dead in 2025",
+      "transferable_angles": [
+        "Remix the loss-framing hook for Mike: 'if you're still letting calls go to voicemail in 2025, you're handing jobs to the next plumber' (Brock: negative framing + Mosseri: timely)",
+        "Turn the controversial-opinion angle into myth-busting for trades: 'cold calling for plumbing leads is dead — here's what books trucks now' (Brock: controversial content = silent alignment shares)",
+        "Make it relatable-specific instead of vague: open on a missed-call screen at 7pm, then the lost-job math, so a contractor sends it to his partner (Brock 'R - Relatable' + Mosseri send>save)",
+        "Fix the visual first: bright, high-contrast text overlay on a real phone showing a missed call, pairing an easy visual with the hook (Brock 'drunk grandma' simplicity)",
+        "Deliver a save-worthy payoff: a 3-step 'never miss a lead' setup (auto-text-back, missed-call workflow), so it earns saves AND fulfills the hook promise (Hormozi 1M fulfill-the-promise + Mosseri save value)"
+      ]
+    },
+    "analyzed_at": "2026-06-23T16:18:55.377Z"
+  }
+]

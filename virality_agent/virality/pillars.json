@@ -1,0 +1,156 @@
+{
+  "niche": "AI websites + ads automation",
+  "pillars": [
+    {
+      "id": 1,
+      "name": "Speed Builds",
+      "tagline": "I built X in Y minutes",
+      "why_it_works": "The single most viral pattern in this niche. Show the timer.",
+      "hook_patterns": [
+        "I built a $5,000 website in 4 minutes.",
+        "POV: your client wants a website by Friday.",
+        "Watch me build a Shopify ad in 60 seconds with AI."
+      ],
+      "structure_beats": [
+        "Open with timer + outcome ($ value or client deadline)",
+        "Show the live build screen-record (cut to the milestone moments)",
+        "Reveal the finished product with the dollar amount on screen",
+        "CTA: comment a keyword to get the stack"
+      ],
+      "spice_swap_focus": ["building", "using"]
+    },
+    {
+      "id": 2,
+      "name": "Cost Killers",
+      "tagline": "Stop paying $X for Y",
+      "why_it_works": "Anti-agency / anti-freelancer angle. Massive watch-time.",
+      "hook_patterns": [
+        "Stop paying agencies $3,000/month for ads.",
+        "Your designer is robbing you. Here's the AI replacing them.",
+        "I fired my Facebook ads guy. This $20 tool replaced him."
+      ],
+      "structure_beats": [
+        "Bold cost call-out in first 2 seconds",
+        "Name the role being replaced (designer / ad buyer / copywriter)",
+        "Show the AI doing it in real time",
+        "Bottom-line save: 'That's $X back in your pocket'",
+        "CTA"
+      ],
+      "spice_swap_focus": ["paying", "using"]
+    },
+    {
+      "id": 3,
+      "name": "Money Proofs",
+      "tagline": "How my AI made me $X",
+      "why_it_works": "Receipts. Screenshots. Stripe dashboards. Bank notifications.",
+      "hook_patterns": [
+        "This AI website made me $4,200 last month while I slept.",
+        "$0 to $10k/mo selling AI websites to local plumbers.",
+        "I charge $3k for what AI builds in 8 minutes."
+      ],
+      "structure_beats": [
+        "Lead with the dollar number on screen",
+        "Show the proof (Stripe / dashboard / payment notif)",
+        "Explain the offer in one sentence",
+        "Show the build/delivery in 5 seconds of b-roll",
+        "CTA: 'Comment X for the playbook'"
+      ],
+      "spice_swap_focus": ["making money with", "selling"]
+    },
+    {
+      "id": 4,
+      "name": "Mistakes & Call-Outs",
+      "tagline": "You're doing it wrong",
+      "why_it_works": "Pattern interrupt. Viewer has to find out if they're guilty.",
+      "hook_patterns": [
+        "Your AI ads are flopping because you skipped this one step.",
+        "Why nobody is buying from your AI-built website.",
+        "Three mistakes killing your Meta ads in 2026."
+      ],
+      "structure_beats": [
+        "Direct accusation in the hook ('Your X is broken')",
+        "Name the specific mistake by minute 0:05",
+        "Show the fix in real time",
+        "Before/after on screen",
+        "CTA"
+      ],
+      "spice_swap_focus": ["using", "trying"]
+    },
+    {
+      "id": 5,
+      "name": "Tool Stacks",
+      "tagline": "The X-tool AI stack I run",
+      "why_it_works": "Saves and shares pile up. Lists are sticky.",
+      "hook_patterns": [
+        "The 3-tool stack I use to build $5k AI websites.",
+        "My exact AI ad workflow (steal it).",
+        "If I started over, this is the only AI stack I'd run."
+      ],
+      "structure_beats": [
+        "Number in the hook",
+        "List each tool with one-line job description",
+        "Show each tool on screen for ~2 seconds",
+        "End with the combined outcome (time saved or $ made)",
+        "CTA"
+      ],
+      "spice_swap_focus": ["using", "building"]
+    },
+    {
+      "id": 6,
+      "name": "Niche Use Cases",
+      "tagline": "I built an AI [thing] for a [niche]",
+      "why_it_works": "Specific industries print engagement. Pick one per video.",
+      "hook_patterns": [
+        "I built an AI website for a roofer. He booked 12 jobs in 5 days.",
+        "How I run AI ads for dentists (steal the angle).",
+        "This AI funnel got a gym 80 leads in a week."
+      ],
+      "structure_beats": [
+        "Niche + outcome in the hook",
+        "Show the business or owner b-roll",
+        "Walk through the build/campaign in 3 beats",
+        "Concrete result number",
+        "CTA: 'DM if you want this for your X'"
+      ],
+      "spice_swap_focus": ["helping", "building"]
+    },
+    {
+      "id": 7,
+      "name": "Hot Takes",
+      "tagline": "Industry call-outs",
+      "why_it_works": "Strong opinion = strong reach. Pick a fight (politely).",
+      "hook_patterns": [
+        "Web designers are cooked. Here's why.",
+        "Meta ad managers are about to be jobless.",
+        "Agencies don't want you to know this AI exists."
+      ],
+      "structure_beats": [
+        "One-line opinion as the hook",
+        "Three reasons or one demo proof",
+        "Acknowledge the counter-argument briefly (credibility)",
+        "Reframe: 'Here's what to do instead'",
+        "CTA"
+      ],
+      "spice_swap_focus": ["using", "learning"]
+    },
+    {
+      "id": 8,
+      "name": "Behind-the-Scenes Builds",
+      "tagline": "Watch me make this",
+      "why_it_works": "Pure process. Timelapse + screen-record. Authentic.",
+      "hook_patterns": [
+        "Building a $3k AI website live, no edits.",
+        "Watch me write 30 ad variations in 4 minutes.",
+        "Day in the life of an AI automation guy."
+      ],
+      "structure_beats": [
+        "Outcome promise in the hook ($ amount or count)",
+        "Sit-down setup shot (~1.5s)",
+        "Fast-cut milestones with timestamps",
+        "Final reveal on screen",
+        "CTA"
+      ],
+      "spice_swap_focus": ["building", "making"]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "AI Automation & AI Tools/News",
+  "niche": "AI automation agency, AI tools, AI news, AI virality (ClientPilot-aligned)",
+  "searchTerms": ["AIAutomation", "AINews"],
+  "competitors": [
+    "https://www.instagram.com/liamottley/",
+    "https://www.instagram.com/rileybrown.ai/",
+    "https://www.instagram.com/theaifield/",
+    "https://www.instagram.com/nick_saraev/"
+  ],
+  "browserPort": 9222,
+  "maxPostsPerSearch": 8,
+  "maxCompetitorPosts": 8
+}

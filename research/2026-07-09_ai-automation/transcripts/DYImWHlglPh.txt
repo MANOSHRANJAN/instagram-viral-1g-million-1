@@ -1,0 +1,38 @@
+ There are five hidden claw tricks that 99% of users
+ have no idea about.
+ Number one is meta-prompting.
+ Now, instead of just writing your prompt,
+ you just ask Claude to write me the perfect prompts
+ to get this result and then you just paste its answer
+ back into your actual prompt.
+ Your output quality, it goes up 10 times
+ because Claude knows what Claude needs better than you do.
+ Number two is XML tags.
+ Now, most people write Claude just one big block of text,
+ but wrap your inputs in tags like context, task,
+ and example, and Claude's outputs gets sharper instantly.
+ This is literally how anthropics own engineers
+ are prompting it.
+ Number three is PDF visual mode.
+ So when you upload a PDF under 100 pages,
+ Claude actually sees the layout, the charts, the tables,
+ the signatures, and not just the extracted text.
+ So you can just drop a contract, a dashboard, a screenshot,
+ or a financial report and just ask what is wrong with this
+ and it'll catch all the stuff that a normal text scanner
+ would completely miss.
+ Number four is the self-critique loop.
+ So after Claude gives you any answer,
+ just reply to identify the three weakest parts
+ of your last response and rewrite them.
+ Now the second past, it is almost always twice as sharp
+ as the first, and number five is the voice ramble.
+ So in Claude, you can just hold down the microphone button
+ and just talk for any amount of minutes
+ about a problem that you're trying to solve.
+ You don't have to structure it because Claude turns
+ that ramble and that waffling into a clean SOP,
+ an email, or a proposal in seconds.
+ If you want our weekly AI newsletter breaking down
+ all the best AI strategies to grow your business,
+ just comment Montana.

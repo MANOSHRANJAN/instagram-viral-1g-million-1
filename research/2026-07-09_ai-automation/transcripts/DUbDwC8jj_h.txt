@@ -1,0 +1,11 @@
+ While it just dropped the Chrome extension and it can do your job for you, it's an AI that
+ lives inside your browser and it is completely free and it takes 60 seconds to install.
+ It can see whatever page that you are on, it can answer questions about it and even take
+ actions for you.
+ But it's best feature is the record a workflow where you start recording how you actually
+ do something like where you click, what you type and it saves it as an automation so that
+ it can do the process autonomously for you whenever you want.
+ So if you spend 20 minutes researching news in your industry every single day, just show
+ Claude once and it will do it for you.
+ I created a guide on the best ways to use this and the setup guide.
+ Comment extension if you want it.

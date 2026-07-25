@@ -1,0 +1,6 @@
+ You can now run Claude Code with unlimited usage, completely free.
+ Somebody on GitHub just built a free tool that sits right between Claude Code and a free AI provider like Gemini, Kimmy, and GLM.
+ And the moment your Claude Limit runs out, it'll instantly switch you to the next available provider all the way down to completely free models, so you never have to stop your coding sessions again.
+ You just connect these providers once and it'll handle the rest completely automatically.
+ And the best part? It works with cursor, codecs, anti-gravity, and literally almost every other AI coding tool out there.
+ So if you want the full setup guide, just comment coding down below and I'll send it to you directly.

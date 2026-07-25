@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>0→100K Command Center</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#0A0A08; --gold:#D4A843; --card:#151512; --border:#262620; --text:#EDEDE6; --muted:#8a8a7f; --green:#5fae6c; --red:#c9615a; }
+  * { box-sizing: border-box; margin:0; padding:0; }
+  body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; padding-bottom:4rem; }
+  a { color: var(--gold); }
+
+  .hero { padding:2.5rem 2rem 2rem; text-align:center; border-bottom:1px solid var(--border);
+          background:radial-gradient(ellipse at top, rgba(212,168,67,0.08), transparent 60%); }
+  .hero .badge { color:var(--gold); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; font-weight:700; margin-bottom:0.6rem; }
+  .hero h1 { font-size:2rem; font-weight:800; }
+  .hero .sub { color:var(--muted); font-size:0.9rem; margin-top:0.4rem; }
+
+  .agents-nav { display:flex; justify-content:center; gap:0.6rem; flex-wrap:wrap; padding:1.2rem 2rem; border-bottom:1px solid var(--border); }
+  .agents-nav a { background:var(--card); border:1px solid var(--border); border-radius:999px; padding:0.4rem 1rem;
+                  font-size:0.8rem; font-weight:600; text-decoration:none; color:var(--text); }
+  .agents-nav a:hover { border-color:var(--gold); color:var(--gold); }
+
+  .wrap { max-width:1200px; margin:0 auto; padding:0 2rem; }
+
+  .agent-section { margin-top:2.5rem; scroll-margin-top:1rem; }
+  .agent-head { display:flex; align-items:baseline; gap:0.7rem; margin-bottom:1rem; }
+  .agent-head .tag { font-size:0.68rem; text-transform:uppercase; letter-spacing:0.1em; color:#000; background:var(--gold);
+                      padding:0.2rem 0.55rem; border-radius:999px; font-weight:800; }
+  .agent-head h2 { font-size:1.25rem; font-weight:800; }
+  .agent-head .desc { color:var(--muted); font-size:0.82rem; }
+
+  .card { background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.4rem; }
+  .grid-2 { display:grid; grid-template-columns:2fr 1fr; gap:1.2rem; }
+  .grid-4 { display:grid; grid-template-columns:repeat(4, 1fr); gap:1rem; }
+  @media (max-width: 900px) { .grid-2, .grid-4 { grid-template-columns:1fr; } }
+
+  /* Goal agent */
+  .goal-progress-track { background:#0e0e0c; border:1px solid var(--border); border-radius:999px; height:18px; overflow:hidden; margin:0.8rem 0; }
+  .goal-progress-fill { background:linear-gradient(90deg, #8a6d1e, var(--gold)); height:100%; border-radius:999px; transition:width 0.4s; }
+  .goal-stats { display:flex; justify-content:space-between; font-size:0.8rem; color:var(--muted); }
+  .goal-stats b { color:var(--gold); font-size:1.1rem; display:block; }
+  .goal-note { font-size:0.82rem; color:var(--muted); margin-top:0.8rem; border-top:1px solid var(--border); padding-top:0.8rem; }
+  .day-badge { font-size:0.75rem; color:var(--gold); font-weight:700; text-transform:uppercase; letter-spacing:0.05em; }
+
+  /* stat cards */
+  .stat-card { text-align:center; }
+  .stat-card .num { font-size:1.6rem; font-weight:800; color:var(--gold); }
+  .stat-card .label { font-size:0.72rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.06em; margin-top:0.2rem; }
+
+  /* account agent */
+  .status-line { font-size:0.88rem; color:var(--muted); }
+  .status-dot { display:inline-block; width:8px; height:8px; border-radius:50%; margin-right:0.4rem; background:var(--red); }
+  .status-dot.ok { background:var(--green); }
+
+  /* content plan table */
+  table { width:100%; border-collapse:collapse; font-size:0.85rem; }
+  th, td { text-align:left; padding:0.6rem 0.7rem; border-bottom:1px solid var(--border); }
+  th { color:var(--gold); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.05em; }
+  tr.done td { opacity:0.45; text-decoration:line-through; }
+  .pill { display:inline-block; background:rgba(212,168,67,0.12); border:1px solid rgba(212,168,67,0.3); color:var(--gold);
+          border-radius:999px; padding:0.1rem 0.6rem; font-size:0.72rem; font-weight:700; }
+  .mark-btn { background:none; border:1px solid var(--border); color:var(--muted); border-radius:6px; padding:0.2rem 0.6rem;
+              font-size:0.72rem; cursor:pointer; }
+  .mark-btn:hover { border-color:var(--gold); color:var(--gold); }
+
+  /* checklist */
+  .checklist { list-style:none; }
+  .checklist li { display:flex; align-items:center; gap:0.6rem; padding:0.5rem 0; border-bottom:1px solid var(--border); font-size:0.88rem; }
+  .checklist li:last-child { border-bottom:none; }
+  .checklist input { width:16px; height:16px; accent-color:var(--gold); }
+  .checklist li.checked span { color:var(--muted); text-decoration:line-through; }
+
+  /* analytics */
+  .log-form { display:grid; grid-template-columns:repeat(6, 1fr); gap:0.6rem; margin-bottom:1rem; }
+  @media (max-width: 900px) { .log-form { grid-template-columns:repeat(2, 1fr); } }
+  .log-form input { background:#0e0e0c; border:1px solid var(--border); color:var(--text); border-radius:6px;
+                     padding:0.5rem 0.6rem; font-size:0.82rem; width:100%; }
+  .log-form label { font-size:0.68rem; color:var(--muted); text-transform:uppercase; display:block; margin-bottom:0.25rem; }
+  .btn { background:var(--gold); color:#000; font-weight:700; border:none; border-radius:6px; padding:0.55rem 1.1rem;
+         font-size:0.82rem; cursor:pointer; }
+  .btn:hover { opacity:0.9; }
+  .btn-ghost { background:none; border:1px solid var(--border); color:var(--muted); }
+  .empty-note { color:var(--muted); font-size:0.85rem; font-style:italic; padding:1rem 0; }
+
+  /* research links */
+  .links-grid { display:grid; grid-template-columns:repeat(2, 1fr); gap:0.6rem; }
+  @media (max-width: 900px) { .links-grid { grid-template-columns:1fr; } }
+  .link-card { background:var(--card); border:1px solid var(--border); border-radius:0.7rem; padding:0.9rem 1.1rem;
+               text-decoration:none; color:var(--text); font-size:0.85rem; font-weight:600; display:block; }
+  .link-card:hover { border-color:var(--gold); color:var(--gold); }
+
+  footer { text-align:center; padding:3rem 2rem 1rem; color:var(--muted); font-size:0.78rem; }
+
+  /* ============ shadcn-style dialog / playbook modal ============ */
+  .sc-overlay { position:fixed; inset:0; background:rgba(0,0,0,0.7); backdrop-filter:blur(3px);
+                display:none; align-items:flex-start; justify-content:center; z-index:100; overflow-y:auto; padding:3vh 1rem; }
+  .sc-overlay.open { display:flex; }
+  .sc-dialog { background:#0c0c0a; border:1px solid var(--border); border-radius:0.9rem; width:100%; max-width:840px;
+               box-shadow:0 24px 60px rgba(0,0,0,0.6); animation:scIn 0.18s ease-out; margin:auto; }
+  @keyframes scIn { from { opacity:0; transform:translateY(8px) scale(0.98); } to { opacity:1; transform:none; } }
+  .sc-header { padding:1.4rem 1.6rem 1rem; border-bottom:1px solid var(--border); position:relative; }
+  .sc-header .sc-eyebrow { font-size:0.68rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--gold); font-weight:800; }
+  .sc-header h2 { font-size:1.35rem; font-weight:800; margin-top:0.3rem; }
+  .sc-header .sc-goal { font-size:0.85rem; color:var(--muted); margin-top:0.5rem; }
+  .sc-header .sc-meta { font-size:0.76rem; color:#c9c9bc; margin-top:0.6rem; display:flex; gap:1.2rem; flex-wrap:wrap; }
+  .sc-header .sc-meta b { color:var(--gold); }
+  .sc-close { position:absolute; top:1.1rem; right:1.1rem; background:none; border:1px solid var(--border); color:var(--muted);
+              width:30px; height:30px; border-radius:7px; cursor:pointer; font-size:1rem; line-height:1; }
+  .sc-close:hover { border-color:var(--gold); color:var(--gold); }
+
+  .sc-tabs { display:flex; gap:0.3rem; padding:0.8rem 1.6rem 0; border-bottom:1px solid var(--border); flex-wrap:wrap; }
+  .sc-tab { background:none; border:none; color:var(--muted); font-family:inherit; font-size:0.82rem; font-weight:600;
+            padding:0.5rem 0.9rem; border-radius:7px 7px 0 0; cursor:pointer; border-bottom:2px solid transparent; margin-bottom:-1px; }
+  .sc-tab:hover { color:var(--text); }
+  .sc-tab.active { color:var(--gold); border-bottom-color:var(--gold); background:rgba(212,168,67,0.06); }
+
+  .sc-body { padding:1.4rem 1.6rem; max-height:60vh; overflow-y:auto; }
+  .sc-panel { display:none; }
+  .sc-panel.active { display:block; }
+  .sc-note { font-size:0.82rem; color:var(--muted); background:rgba(212,168,67,0.05); border:1px solid rgba(212,168,67,0.2);
+             border-radius:0.6rem; padding:0.7rem 0.9rem; margin-bottom:1rem; }
+
+  /* shot cards (reel script) */
+  .shot { border:1px solid var(--border); border-radius:0.7rem; padding:0.9rem 1rem; margin-bottom:0.8rem; background:var(--card); }
+  .shot-top { display:flex; align-items:center; gap:0.7rem; margin-bottom:0.6rem; flex-wrap:wrap; }
+  .sc-badge { display:inline-block; font-size:0.7rem; font-weight:700; padding:0.15rem 0.55rem; border-radius:999px;
+              background:var(--gold); color:#000; }
+  .sc-badge.outline { background:none; border:1px solid var(--border); color:var(--muted); }
+  .shot-dialogue { font-size:0.95rem; font-weight:600; color:var(--text); margin-bottom:0.6rem; font-style:italic; }
+  .shot-grid { display:grid; grid-template-columns:1fr 1fr; gap:0.5rem 1rem; font-size:0.8rem; }
+  @media (max-width:640px){ .shot-grid { grid-template-columns:1fr; } }
+  .shot-grid .k { color:var(--gold); font-size:0.68rem; text-transform:uppercase; letter-spacing:0.05em; font-weight:700; }
+  .shot-grid .v { color:#d3d3c7; }
+  .shot-pause { margin-top:0.5rem; font-size:0.78rem; color:#c9a94a; border-left:2px solid var(--gold); padding-left:0.6rem; }
+
+  .sc-caption-box { background:#0e0e0c; border:1px solid var(--border); border-radius:0.6rem; padding:0.8rem 1rem;
+                    font-size:0.83rem; color:#d3d3c7; margin-top:0.4rem; }
+  .sc-caption-box .cap-label { font-size:0.68rem; text-transform:uppercase; color:var(--gold); font-weight:700; letter-spacing:0.05em; display:block; margin-bottom:0.3rem; }
+
+  /* carousel slides */
+  .slide-row { display:flex; gap:0.9rem; border:1px solid var(--border); border-radius:0.7rem; padding:0.8rem 1rem;
+               margin-bottom:0.6rem; background:var(--card); }
+  .slide-num { flex:0 0 auto; width:34px; height:34px; border-radius:8px; background:var(--gold); color:#000;
+               font-weight:800; display:flex; align-items:center; justify-content:center; font-size:0.9rem; }
+  .slide-body .sh { font-weight:700; font-size:0.9rem; }
+  .slide-body .ss { color:var(--muted); font-size:0.8rem; }
+  .slide-body .sv { color:#c9a94a; font-size:0.75rem; margin-top:0.3rem; }
+
+  /* how-to accordion-ish blocks */
+  .sc-block { margin-bottom:1.1rem; }
+  .sc-block h4 { font-size:0.8rem; text-transform:uppercase; letter-spacing:0.06em; color:var(--gold); font-weight:800; margin-bottom:0.5rem; }
+  .sc-list { list-style:none; }
+  .sc-list li { font-size:0.85rem; color:#d3d3c7; padding:0.35rem 0 0.35rem 1.3rem; position:relative; border-bottom:1px solid #1c1c18; }
+  .sc-list li:last-child { border-bottom:none; }
+  .sc-list li:before { content:'→'; position:absolute; left:0; color:var(--gold); }
+
+  .playbook-btn { background:var(--gold); color:#000; border:none; border-radius:6px; padding:0.28rem 0.7rem;
+                  font-size:0.72rem; font-weight:700; cursor:pointer; font-family:inherit; }
+  .playbook-btn:hover { opacity:0.9; }
+  .playbook-btn.disabled { background:none; border:1px solid var(--border); color:var(--muted); cursor:not-allowed; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">Command Center</div>
+  <h1>0 → 100,000 Followers — 90 Day Build</h1>
+  <div class="sub">Each agent below owns one job. Update <code>dashboard/data.js</code> with real numbers as you go — this page reads from it directly.</div>
+</div>
+
+<div class="agents-nav">
+  <a href="#goal">🎯 Goal</a>
+  <a href="#account">📊 Account & Analytics</a>
+  <a href="#content">🎬 Content Plan</a>
+  <a href="#ops">✅ Daily Ops</a>
+  <a href="#research">🧠 Research</a>
+</div>
+
+<div class="wrap">
+
+  <!-- GOAL AGENT -->
+  <div class="agent-section" id="goal">
+    <div class="agent-head">
+      <span class="tag">Goal Agent</span>
+      <h2>90-Day Target</h2>
+      <span class="desc">Tracks the single top-line number everything else feeds into.</span>
+    </div>
+    <div class="card">
+      <div class="goal-progress-track"><div class="goal-progress-fill" id="goalFill" style="width:0%"></div></div>
+      <div class="goal-stats">
+        <div><b id="goalCurrent">0</b>current followers</div>
+        <div><b id="goalDay">Day 1</b>of 90</div>
+        <div><b id="goalTarget">100,000</b>target</div>
+      </div>
+      <div class="goal-note" id="goalNote"></div>
+    </div>
+  </div>
+
+  <!-- ACCOUNT / ANALYTICS AGENT -->
+  <div class="agent-section" id="account">
+    <div class="agent-head">
+      <span class="tag">Account &amp; Analytics Agent</span>
+      <h2>Instagram Status</h2>
+      <span class="desc">I can't pull live IG analytics automatically (no active session / no official API access) — this is a manual log you update after checking the app. Ask me to re-check via the scraper if Chrome debug mode is running.</span>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="status-line"><span class="status-dot" id="accountDot"></span><span id="accountStatus">—</span></div>
+        <div style="margin-top:0.8rem;" class="status-line">Handle: <b id="accountHandle" style="color:var(--gold);">—</b></div>
+        <div class="status-line">Following: <span id="accountFollowing">—</span></div>
+
+        <h3 style="margin-top:1.4rem; font-size:0.85rem; color:var(--gold);">Log today's numbers</h3>
+        <div class="log-form" style="margin-top:0.6rem;">
+          <div><label>Date</label><input type="date" id="in_date"></div>
+          <div><label>Followers</label><input type="number" id="in_followers" placeholder="0"></div>
+          <div><label>Views</label><input type="number" id="in_views" placeholder="0"></div>
+          <div><label>Likes</label><input type="number" id="in_likes" placeholder="0"></div>
+          <div><label>Comments</label><input type="number" id="in_comments" placeholder="0"></div>
+          <div><label>Saves</label><input type="number" id="in_saves" placeholder="0"></div>
+        </div>
+        <button class="btn" onclick="logEntry()">Save entry</button>
+        <button class="btn btn-ghost" onclick="clearLog()" style="margin-left:0.5rem;">Clear log</button>
+      </div>
+      <div class="card">
+        <div class="stat-card"><div class="num" id="statAvgViews">—</div><div class="label">Avg views/reel</div></div>
+        <div class="stat-card" style="margin-top:1rem;"><div class="num" id="statAvgFollowGain">—</div><div class="label">Avg daily follower gain</div></div>
+        <div class="stat-card" style="margin-top:1rem;"><div class="num" id="statEntries">0</div><div class="label">Days logged</div></div>
+      </div>
+    </div>
+    <div class="card" style="margin-top:1rem;">
+      <h3 style="font-size:0.85rem; color:var(--gold); margin-bottom:0.6rem;">Daily log</h3>
+      <div id="logTableWrap"><div class="empty-note">No entries yet — log your first day's numbers above once the account is live.</div></div>
+    </div>
+  </div>
+
+  <!-- CONTENT AGENT -->
+  <div class="agent-section" id="content">
+    <div class="agent-head">
+      <span class="tag">Content Agent</span>
+      <h2>Week 1 Plan</h2>
+      <span class="desc">Full scripts in <a href="../content/week1_content_plan.md">content/week1_content_plan.md</a>. Check off each day as it's filmed &amp; posted.</span>
+    </div>
+    <div class="card">
+      <table id="contentTable">
+        <thead><tr><th>Day</th><th>Pillar</th><th>Hook</th><th>CTA</th><th>Note</th><th></th></tr></thead>
+        <tbody id="contentTbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- OPS AGENT -->
+  <div class="agent-section" id="ops">
+    <div class="agent-head">
+      <span class="tag">Ops Agent</span>
+      <h2>Today's Checklist</h2>
+      <span class="desc">Resets each day — check these off as you go. Saved locally in this browser.</span>
+    </div>
+    <div class="card">
+      <ul class="checklist" id="checklistUl"></ul>
+    </div>
+  </div>
+
+  <!-- RESEARCH AGENT -->
+  <div class="agent-section" id="research">
+    <div class="agent-head">
+      <span class="tag">Research Agent</span>
+      <h2>Source Docs</h2>
+      <span class="desc">Every strategy/script doc this dashboard is grounded in — one click away.</span>
+    </div>
+    <div class="links-grid" id="linksGrid"></div>
+  </div>
+
+</div>
+
+<footer>
+  Command Center · reads from <code>dashboard/data.js</code> · state (checkboxes, logs) saved in this browser's localStorage
+</footer>
+
+<!-- ============ Playbook Dialog (shadcn-style) ============ -->
+<div class="sc-overlay" id="pbOverlay">
+  <div class="sc-dialog" role="dialog" aria-modal="true">
+    <div class="sc-header">
+      <button class="sc-close" onclick="closePlaybook()">✕</button>
+      <div class="sc-eyebrow" id="pbEyebrow">Day 1 Playbook</div>
+      <h2 id="pbTitle">—</h2>
+      <div class="sc-goal" id="pbGoal">—</div>
+      <div class="sc-meta">
+        <span><b>Pillar:</b> <span id="pbPillar">—</span></span>
+        <span><b>Post:</b> <span id="pbWindow">—</span></span>
+      </div>
+    </div>
+    <div class="sc-tabs">
+      <button class="sc-tab active" data-panel="reel">🎬 Reel Script</button>
+      <button class="sc-tab" data-panel="carousel">🖼 Carousel</button>
+      <button class="sc-tab" data-panel="shoot">📹 How to Shoot</button>
+      <button class="sc-tab" data-panel="data">📊 Data Points</button>
+    </div>
+    <div class="sc-body">
+      <div class="sc-panel active" id="panel-reel"></div>
+      <div class="sc-panel" id="panel-carousel"></div>
+      <div class="sc-panel" id="panel-shoot"></div>
+      <div class="sc-panel" id="panel-data"></div>
+    </div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script>
+const D = window.DASHBOARD_DATA;
+const LS_KEY = 'ig_dashboard_state_v1';
+
+function loadState() {
+  try { return JSON.parse(localStorage.getItem(LS_KEY)) || {}; } catch { return {}; }
+}
+function saveState(s) { localStorage.setItem(LS_KEY, JSON.stringify(s)); }
+let state = loadState();
+state.contentDone = state.contentDone || {};
+state.checklistDone = state.checklistDone || {};
+state.checklistDate = state.checklistDate || null;
+state.analyticsLog = state.analyticsLog || (D.analyticsLog || []);
+
+// reset daily checklist if it's a new day
+const today = new Date().toISOString().slice(0, 10);
+if (state.checklistDate !== today) {
+  state.checklistDone = {};
+  state.checklistDate = today;
+  saveState(state);
+}
+
+// ---- GOAL AGENT ----
+function renderGoal() {
+  const g = D.goal;
+  const current = g.currentFollowers ?? 0;
+  const pct = Math.min(100, (current / g.target) * 100);
+  document.getElementById('goalFill').style.width = pct + '%';
+  document.getElementById('goalCurrent').textContent = current.toLocaleString();
+  document.getElementById('goalTarget').textContent = g.target.toLocaleString();
+
+  const start = new Date(g.startDate);
+  const now = new Date();
+  const dayNum = Math.max(1, Math.min(g.durationDays, Math.floor((now - start) / 86400000) + 1));
+  document.getElementById('goalDay').textContent = `Day ${dayNum}`;
+  document.getElementById('goalNote').textContent = g.note;
+}
+
+// ---- ACCOUNT AGENT ----
+function renderAccount() {
+  const a = D.account;
+  document.getElementById('accountHandle').textContent = a.handle;
+  document.getElementById('accountFollowing').textContent = a.followingCount;
+  document.getElementById('accountStatus').textContent = a.status;
+  document.getElementById('accountDot').classList.toggle('ok', !!a.lastChecked);
+}
+
+// ---- CONTENT AGENT ----
+function renderContent() {
+  const tbody = document.getElementById('contentTbody');
+  tbody.innerHTML = '';
+  D.week1Plan.forEach(row => {
+    const done = !!state.contentDone[row.day];
+    const hasPlaybook = !!(D.dayPlaybooks && D.dayPlaybooks[row.day]);
+    const tr = document.createElement('tr');
+    if (done) tr.classList.add('done');
+    tr.innerHTML = `
+      <td><span class="pill">Day ${row.day}</span></td>
+      <td>${row.pillar}</td>
+      <td>"${row.hook}"</td>
+      <td>${row.cta}</td>
+      <td style="color:var(--muted); font-size:0.8rem;">${row.note}</td>
+      <td style="white-space:nowrap;">
+        ${hasPlaybook ? `<button class="playbook-btn" data-pb="${row.day}">📄 Playbook</button>` : `<button class="playbook-btn disabled" title="Full playbook coming — ask Kiro to generate Day ${row.day}">Playbook</button>`}
+        <button class="mark-btn" data-day="${row.day}" style="margin-left:0.4rem;">${done ? 'Undo' : 'Mark posted'}</button>
+      </td>
+    `;
+    tbody.appendChild(tr);
+  });
+  tbody.querySelectorAll('.mark-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const day = btn.dataset.day;
+      state.contentDone[day] = !state.contentDone[day];
+      saveState(state);
+      renderContent();
+    });
+  });
+  tbody.querySelectorAll('.playbook-btn[data-pb]').forEach(btn => {
+    btn.addEventListener('click', () => openPlaybook(btn.dataset.pb));
+  });
+}
+
+// ---- OPS AGENT ----
+function renderChecklist() {
+  const ul = document.getElementById('checklistUl');
+  ul.innerHTML = '';
+  D.dailyChecklist.forEach((item, i) => {
+    const checked = !!state.checklistDone[i];
+    const li = document.createElement('li');
+    if (checked) li.classList.add('checked');
+    li.innerHTML = `<input type="checkbox" ${checked ? 'checked' : ''} data-i="${i}"><span>${item}</span>`;
+    ul.appendChild(li);
+  });
+  ul.querySelectorAll('input').forEach(cb => {
+    cb.addEventListener('change', () => {
+      const i = cb.dataset.i;
+      state.checklistDone[i] = cb.checked;
+      saveState(state);
+      renderChecklist();
+    });
+  });
+}
+
+// ---- ANALYTICS ----
+function renderAnalytics() {
+  const log = state.analyticsLog || [];
+  const wrap = document.getElementById('logTableWrap');
+  document.getElementById('statEntries').textContent = log.length;
+
+  if (log.length === 0) {
+    wrap.innerHTML = '<div class="empty-note">No entries yet — log your first day\'s numbers above once the account is live.</div>';
+    document.getElementById('statAvgViews').textContent = '—';
+    document.getElementById('statAvgFollowGain').textContent = '—';
+    return;
+  }
+
+  const avgViews = Math.round(log.reduce((s, r) => s + (r.views || 0), 0) / log.length);
+  let gainSum = 0, gainCount = 0;
+  for (let i = 1; i < log.length; i++) {
+    gainSum += (log[i].followers || 0) - (log[i - 1].followers || 0);
+    gainCount++;
+  }
+  document.getElementById('statAvgViews').textContent = avgViews.toLocaleString();
+  document.getElementById('statAvgFollowGain').textContent = gainCount ? Math.round(gainSum / gainCount).toLocaleString() : '—';
+
+  let html = '<table><thead><tr><th>Date</th><th>Followers</th><th>Views</th><th>Likes</th><th>Comments</th><th>Saves</th></tr></thead><tbody>';
+  log.slice().reverse().forEach(r => {
+    html += `<tr><td>${r.date}</td><td>${r.followers ?? '—'}</td><td>${r.views ?? '—'}</td><td>${r.likes ?? '—'}</td><td>${r.comments ?? '—'}</td><td>${r.saves ?? '—'}</td></tr>`;
+  });
+  html += '</tbody></table>';
+  wrap.innerHTML = html;
+}
+
+function logEntry() {
+  const date = document.getElementById('in_date').value || today;
+  const entry = {
+    date,
+    followers: parseInt(document.getElementById('in_followers').value) || 0,
+    views: parseInt(document.getElementById('in_views').value) || 0,
+    likes: parseInt(document.getElementById('in_likes').value) || 0,
+    comments: parseInt(document.getElementById('in_comments').value) || 0,
+    saves: parseInt(document.getElementById('in_saves').value) || 0,
+  };
+  state.analyticsLog = state.analyticsLog || [];
+  const existingIdx = state.analyticsLog.findIndex(r => r.date === date);
+  if (existingIdx >= 0) state.analyticsLog[existingIdx] = entry;
+  else state.analyticsLog.push(entry);
+  state.analyticsLog.sort((a, b) => a.date.localeCompare(b.date));
+  saveState(state);
+  renderAnalytics();
+
+  // also bump the goal agent's current follower count to the latest logged value
+  D.goal.currentFollowers = entry.followers;
+  renderGoal();
+}
+
+function clearLog() {
+  if (!confirm('Clear all logged analytics entries? This cannot be undone.')) return;
+  state.analyticsLog = [];
+  saveState(state);
+  renderAnalytics();
+}
+
+// ---- RESEARCH AGENT ----
+function renderLinks() {
+  const grid = document.getElementById('linksGrid');
+  grid.innerHTML = '';
+  D.links.forEach(l => {
+    const a = document.createElement('a');
+    a.href = l.href;
+    a.className = 'link-card';
+    a.textContent = '📄 ' + l.label;
+    a.target = '_blank';
+    grid.appendChild(a);
+  });
+}
+
+// ---- PLAYBOOK MODAL ----
+function esc(s){ return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+function renderReelPanel(pb) {
+  const r = pb.reel;
+  if (!r) return '<div class="sc-note">No reel script for this day.</div>';
+  const shots = r.shots.map(s => `
+    <div class="shot">
+      <div class="shot-top">
+        <span class="sc-badge">${esc(s.time)}</span>
+        <span class="sc-badge outline">${esc(s.camera)}</span>
+      </div>
+      <div class="shot-dialogue">"${esc(s.dialogue)}"</div>
+      <div class="shot-grid">
+        <div><div class="k">On-screen text</div><div class="v">${esc(s.onScreen)}</div></div>
+        <div><div class="k">B-roll</div><div class="v">${esc(s.broll)}</div></div>
+        <div><div class="k">Edit</div><div class="v">${esc(s.edit)}</div></div>
+      </div>
+      ${s.pause ? `<div class="shot-pause">⏸ Pause / delivery: ${esc(s.pause)}</div>` : ''}
+    </div>`).join('');
+  return `
+    <div class="sc-note"><b>Format:</b> ${esc(r.format)}<br>${esc(r.deliveryNote)}</div>
+    ${shots}
+    <div class="sc-caption-box"><span class="cap-label">Caption</span>${esc(r.caption)}</div>
+    <div class="sc-caption-box" style="margin-top:0.6rem;"><span class="cap-label">Audio</span>${esc(r.audio)}</div>`;
+}
+
+function renderCarouselPanel(pb) {
+  const c = pb.carousel;
+  if (!c) return '<div class="sc-note">No carousel for this day.</div>';
+  const slides = c.slides.map(s => `
+    <div class="slide-row">
+      <div class="slide-num">${s.n}</div>
+      <div class="slide-body">
+        <div class="sh">${esc(s.headline)}</div>
+        ${s.sub ? `<div class="ss">${esc(s.sub)}</div>` : ''}
+        <div class="sv">🎨 ${esc(s.visual)}</div>
+      </div>
+    </div>`).join('');
+  return `
+    <div class="sc-note"><b>Purpose:</b> ${esc(c.purpose)}<br><b>Style:</b> ${esc(c.style)}</div>
+    ${slides}
+    <div class="sc-caption-box"><span class="cap-label">Caption</span>${esc(c.caption)}</div>`;
+}
+
+function block(title, items) {
+  return `<div class="sc-block"><h4>${esc(title)}</h4><ul class="sc-list">${items.map(i => `<li>${esc(i)}</li>`).join('')}</ul></div>`;
+}
+
+function renderShootPanel(pb) {
+  const h = pb.howToShoot;
+  if (!h) return '<div class="sc-note">No shooting guide for this day.</div>';
+  return block('Setup', h.setup) + block('Camera settings', h.settings) +
+         block('Delivery', h.delivery) + block('B-roll to capture', h.broll) +
+         block('Editing', h.editing);
+}
+
+function renderDataPanel(pb) {
+  const d = pb.dataPoints;
+  if (!d) return '<div class="sc-note">No data notes for this day.</div>';
+  return block('Why this works', d.whyItWorks) + block('Target metrics', d.targetMetrics) +
+         block('First 60 minutes', d.firstHour);
+}
+
+function openPlaybook(day) {
+  const pb = D.dayPlaybooks && D.dayPlaybooks[day];
+  if (!pb) return;
+  document.getElementById('pbEyebrow').textContent = `Day ${day} Playbook`;
+  document.getElementById('pbTitle').textContent = pb.title;
+  document.getElementById('pbGoal').textContent = pb.goal;
+  document.getElementById('pbPillar').textContent = pb.pillar;
+  document.getElementById('pbWindow').textContent = pb.postingWindow;
+  document.getElementById('panel-reel').innerHTML = renderReelPanel(pb);
+  document.getElementById('panel-carousel').innerHTML = renderCarouselPanel(pb);
+  document.getElementById('panel-shoot').innerHTML = renderShootPanel(pb);
+  document.getElementById('panel-data').innerHTML = renderDataPanel(pb);
+  // reset to first tab
+  document.querySelectorAll('.sc-tab').forEach((t, i) => t.classList.toggle('active', i === 0));
+  document.querySelectorAll('.sc-panel').forEach((p, i) => p.classList.toggle('active', i === 0));
+  document.getElementById('pbOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closePlaybook() {
+  document.getElementById('pbOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.querySelectorAll('.sc-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.sc-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.sc-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('panel-' + tab.dataset.panel).classList.add('active');
+  });
+});
+document.getElementById('pbOverlay').addEventListener('click', e => {
+  if (e.target.id === 'pbOverlay') closePlaybook();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closePlaybook(); });
+
+renderGoal();
+renderAccount();
+renderContent();
+renderChecklist();
+renderAnalytics();
+renderLinks();
+</script>
+
+</body>
+</html>

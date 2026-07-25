@@ -1,0 +1,20 @@
+ Okay, this one's wild.
+ A college student built an AI that catches politicians
+ lying in real time, live news, press conferences,
+ or anything streaming, and Reddit's losing it
+ because he built it all with Claude.
+ The second someone speaks on a live stream,
+ it transcribes live, pulls real evidence from the web,
+ and checks every claim against authoritative sources
+ before the sentence even ends.
+ And it doesn't just slap a true or false on it.
+ It shows you the exact sources,
+ so you're never trusting it blindly.
+ It's a Chrome extension called Intruth.
+ Install it, open any live debate,
+ and it overlays the fact checks right on your screen
+ as they speak.
+ It even sorts verdicts into substantially true,
+ misleading, and unverifiable.
+ Want the link, comment truth,
+ and I'll send it straight to your DMs.

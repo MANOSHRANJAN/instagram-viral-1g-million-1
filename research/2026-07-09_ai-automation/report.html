@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Automation &amp; AI Tools/News — Instagram Research Report</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#0A0A08; --gold:#D4A843; --card:#151512; --border:#262620; --text:#EDEDE6; --muted:#8a8a7f; }
+  * { box-sizing: border-box; margin:0; padding:0; }
+  body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+  .hero { padding:4rem 2rem 3rem; text-align:center; border-bottom:1px solid var(--border);
+          background:radial-gradient(ellipse at top, rgba(212,168,67,0.08), transparent 60%); }
+  .hero .badge { color:var(--gold); font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; font-weight:700; margin-bottom:1rem; }
+  .hero h1 { font-size:2.2rem; font-weight:800; margin-bottom:0.5rem; }
+  .hero .sub { color:var(--muted); font-size:0.95rem; }
+  .hero .meta { margin-top:1rem; color:var(--muted); font-size:0.85rem; }
+  .stats-bar { display:flex; justify-content:center; gap:2.5rem; flex-wrap:wrap; padding:2rem; border-bottom:1px solid var(--border); }
+  .stat { text-align:center; }
+  .stat .num { font-size:1.8rem; font-weight:800; color:var(--gold); }
+  .stat .label { font-size:0.72rem; color:var(--muted); text-transform:uppercase; letter-spacing:0.08em; margin-top:0.25rem; }
+  .section-title { text-align:center; font-size:1.4rem; font-weight:700; margin:3rem 0 2rem; }
+  .posts-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(340px, 1fr)); gap:1.5rem; max-width:1400px; margin:0 auto; padding:0 2rem; }
+  .post-card { background:var(--card); border:1px solid var(--border); border-radius:1rem; padding:1.4rem; position:relative;
+               transition:transform 0.2s, border-color 0.2s; }
+  .post-card:hover { transform:translateY(-3px); border-color:var(--gold); }
+  .post-rank { position:absolute; top:-0.7rem; left:1.2rem; background:var(--gold); color:#000; font-weight:800;
+               font-size:0.8rem; padding:0.2rem 0.6rem; border-radius:999px; }
+  .post-head { display:flex; justify-content:space-between; align-items:baseline; margin-top:0.6rem; margin-bottom:0.6rem; }
+  .post-author { font-weight:700; }
+  .post-type { color:var(--muted); font-size:0.78rem; text-transform:uppercase; letter-spacing:0.05em; }
+  .post-stats { display:flex; gap:1rem; font-size:0.85rem; color:var(--muted); margin-bottom:0.8rem; flex-wrap:wrap; }
+  .post-stats .eng { color:var(--gold); font-weight:600; }
+  .frames { display:flex; gap:0.4rem; margin-bottom:0.8rem; }
+  .frame { width:33.3%; border-radius:0.5rem; object-fit:cover; aspect-ratio:9/16; }
+  .visual-hook { font-size:0.8rem; color:var(--muted); margin-bottom:0.5rem; }
+  .hook-quote { font-size:1.05rem; font-weight:600; color:var(--gold); margin-bottom:0.7rem; font-style:italic; }
+  .transcript-box { max-height:120px; overflow-y:auto; font-size:0.82rem; color:#c9c9bc; background:#0e0e0c;
+                     border:1px solid var(--border); border-radius:0.5rem; padding:0.7rem; margin-bottom:0.8rem; }
+  .transcript-box.muted { color:var(--muted); font-style:italic; }
+  .why-box { background:rgba(212,168,67,0.06); border:1px solid rgba(212,168,67,0.25); border-radius:0.5rem;
+             padding:0.7rem 0.9rem; margin-bottom:0.8rem; }
+  .why-title { font-size:0.75rem; text-transform:uppercase; letter-spacing:0.05em; color:var(--gold); font-weight:700; margin-bottom:0.4rem; }
+  .why-box ul { padding-left:1.1rem; font-size:0.83rem; color:#d8d8cc; }
+  .caption-preview { font-size:0.8rem; color:var(--muted); margin-bottom:0.8rem; }
+  .post-link { color:var(--gold); text-decoration:none; font-size:0.82rem; font-weight:600; }
+  .post-link:hover { text-decoration:underline; }
+  .patterns-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:1.2rem; max-width:1100px; margin:0 auto 3rem; padding:0 2rem; }
+  .pattern-card { background:var(--card); border:1px solid var(--border); border-radius:0.8rem; padding:1.2rem; }
+  .pattern-card h3 { font-size:0.85rem; color:var(--gold); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:0.6rem; }
+  .pattern-card p { font-size:0.88rem; color:#d8d8cc; }
+  footer { text-align:center; padding:3rem 2rem; color:var(--muted); font-size:0.8rem; border-top:1px solid var(--border); margin-top:2rem; }
+  footer a { color:var(--gold); }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="badge">Instagram Research Report</div>
+  <h1>AI Automation &amp; AI Tools/News</h1>
+  <div class="sub">AI automation agency, AI tools, AI news, AI virality (ClientPilot-aligned)</div>
+  <div class="meta">
+    Search terms: AIAutomation, AINews
+     · Competitors: https://www.instagram.com/liamottley/, https://www.instagram.com/rileybrown.ai/, https://www.instagram.com/theaifield/, https://www.instagram.com/nick_saraev/
+    · Scraped 7/9/2026
+  </div>
+</div>
+
+<div class="stats-bar">
+  <div class="stat"><div class="num">40</div><div class="label">Total Posts</div></div>
+  <div class="stat"><div class="num">70%</div><div class="label">Reels</div></div>
+  <div class="stat"><div class="num">22</div><div class="label">Transcribed</div></div>
+  <div class="stat"><div class="num">28</div><div class="label">Visual Hooks Captured</div></div>
+  <div class="stat"><div class="num">10.7K</div><div class="label">Top Likes</div></div>
+</div>
+
+<div class="section-title">Top 6 Performing Posts</div>
+<div class="posts-grid">
+  
+  <div class="post-card">
+    <div class="post-rank">#1</div>
+    <div class="post-head">
+      <div class="post-author">@joestoltelive</div>
+      <div class="post-type">reel</div>
+    </div>
+    <div class="post-stats">
+      <span>❤️ 2.3K</span>
+      <span>👁 454.1K</span>
+      <span>💬 14.3K</span>
+      <span class="eng">⚡ 468.4K engagement</span>
+    </div>
+    <div class="frames"><img src="file:///Users/manoshranjan/ig-research/projects/ai-automation/hook-screenshots/DOixcnAEWOg_0s.jpg" class="frame" loading="lazy" alt="hook frame"><img src="file:///Users/manoshranjan/ig-research/projects/ai-automation/hook-screenshots/DOixcnAEWOg_1s.jpg" class="frame" loading="lazy" alt="hook frame"><img src="file:///Users/manoshranjan/ig-research/projects/ai-automation/hook-screenshots/DOixcnAEWOg_2s.jpg" class="frame" loading="lazy" alt="hook frame"></div>
+    <div class="visual-hook">🎬 Talking head with text overlay</div>
+    <div class="hook-quote">"(no hook captured)"</div>
+    <div class="transcript-box">You can tell when something's written by AI, right?
+ It just feels off.
+ Well, here's exactly how to fix that.
+ Add this one line inside your chat GPT.
+ First, click on Settings, then Personalization,
+ then Custom Instructions.
+ Under the box that says what traits should chat GPT have,
+ I want you to enter this prompt.
+ Write like a real human.
+ Be professional but natural like you're explaining something
+ to a smart friend over coffee.
+ Avoid buzzwords, corporate jargon, and m-dashes.
+ Never sound like a press release.
+ Be clear, direct, conversational, and real.
+ So why does this matter?
+ Because people can smell the AI, words like seamless,
+ or delve, or game-changing, or using m-dashes.
+ They scream fake robot, not authentic connection.
+ And if you want the full list of words
+ that I've banned so that my content sounds human
+ and not fake, comment list, and I'll send it right over to you.</div>
+    <div class="why-box">
+      <div class="why-title">Why it worked</div>
+      <ul><li>Short, punchy hook (≤12 words) minimizes scroll-past risk</li><li>High absolute engagement — validated by the algorithm at scale</li></ul>
+    </div>
+    <div class="caption-preview">joestolteliveVerified 42 wEveryone can smell AI-generated content from a mile away… and it’s killing your posts!Here’s the 1 ChatGPT setting that makes your AI responses sound like you: authentic, human, and natural...Th…</div>
+    <a class="post-link" href="https://www.instagram.com/p/DOixcnAEWOg/" target="_blank">Open on Instagram →</a>
+  </div>
+
+  <div class="post-card">
+    <div class="post-rank">#2</div>
+    <div class="post-head">
+      <div class="post-author">@getintoai</div>
+      <div class="post-type">reel</div>
+    </div>
+    <div class="post-stats">
+      <span>❤️ 2.1K</span>
+      <span>👁 176.7K</span>
+      <span>💬 1.5K</span>
+      <span class="eng">⚡ 178.2K engagement</span>
+    </div>
+    <div class="frames"><img src="file:///Users/manoshranjan/ig-research/projects/ai-automation/hook-screenshots/DXh-ACgk-f0_0s.jpg" class="frame" loading="lazy" alt="hook frame"><img src="file:///Users/manoshranjan/ig-research/projects/ai-automation/hook-screenshots/DXh-ACgk-f0_1s.jpg" class="frame" loading="lazy" alt="hook frame"><img src="file:///Users/manoshranjan/ig-research/projects/ai-automation/hook-screenshots/DXh-ACgk-f0_2s.jpg" class="frame" loading="lazy" alt="hook frame"></div>
+    <div class="visual-hook">🎬 Talking head with text overlay</div>
+    <div class="hook-quote">"(no hook captured)"</div>
+    <div class="transcript-box muted">No transcript (image/carousel or audio unavailable)</div>
+    <div class="why-box">
+      <div class="why-title">Why it worked</div>
+      <ul><li>Short, punchy hook (≤12 words) minimizes scroll-past risk</li><li>High absolute engagement — validated by the algorithm at scale</li></ul>
+    </div>
+    <div class="caption-preview">getintoaiVerified Edited•10 wOpenAI just pushed things further with ChatGPT 5.5, and the impact is bigger than it looks 👀This isn’t just an upgrade. It’s a shift in how things get built. ChatGPT 5.5 turns plain language…</div>
+    <a class="post-link" href="https://www.instagram.com/p/DXh-ACgk-f0/" target="_blank">Open on Instagram →</a>
+  </div>
+
+  <div class="post-card">
+    <div class="post-rank">#3</div>
+    <div class="post-head">
+      <div class="post-author">@toolsdropsai</div>
+      <div class="post-type">reel</div>
+    </div>
+    <div class="post-stats">
+      <span>❤️ 10.7K</span>
+      <span>👁 72.8K</span>
+      <span>💬 —</span>
+      <span class="eng">⚡ 72.8K engagement</span>
+    </div>
+    <div class="frames"><img src="file:///Users/manoshranjan/ig-research/projects/ai-automation/hook-screenshots/DZn8xwPiM1j_0s.jpg" class="frame" loading="lazy" alt="hook frame"><img src="file:///Users/manoshranjan/ig-research/projects/ai-automation/hook-screenshots/DZn8xwPiM1j_1s.jpg" class="frame" loading="lazy" alt="hook frame"><img src="file:///Users/manoshranjan/ig-research/projects/ai-automation/hook-screenshots/DZn8xwPiM1j_2s.jpg" class="frame" loading="lazy" alt="hook frame"></div>
+    <div class="visual-hook">🎬 Talking head with text overlay</div>
+    <div class="hook-quote">"(no hook captured)"</div>
+    <div class="transcript-box">The first job that AI will destroy and eliminate and I advise nobody goes into this field because this field will be wiped out.
+ Radiology is radiology. Computer vision is superhuman already 12 years ago.
+ Well, he was absolutely right. Radiology was completely penetrated by computer vision. Computer vision proliferated through every single form of radiology and every radiology stack and every radiologist today is augmented by computer vision.
+ However, the interesting thing is this, radiology demand went up.</div>
+    <div class="why-box">
+      <div class="why-title">Why it worked</div>
+      <ul><li>Short, punchy hook (≤12 words) minimizes scroll-past risk</li></ul>
+    </div>
+    <div class="caption-preview">toolsdropsai 3 wJensen Huang named the first job he thought AI would destroy. 🤖 Nvidia's CEO once said computer vision became superhuman over 12 years ago — and advised people to avoid one field entirely because AI woul…</div>
+    <a class="post-link" href="https://www.instagram.com/p/DZn8xwPiM1j/" target="_blank">Open on Instagram →</a>
+  </div>
+
+  <div class="post-card">
+    <div class="post-rank">#4</div>
+    <div class="post-head">
+      <div class="post-author">@quiscreates</div>
+      <div class="post-type">reel</div>
+    </div>
+    <div class="post-stats">
+      <span>❤️ 7</span>
+      <span>👁 68.3K</span>
+      <span>💬 2.8K</span>
+      <span class="eng">⚡ 71.1K engagement</span>
+    </div>
+    <div class="frames"><img src="file:///Users/manoshranjan/ig-research/projects/ai-automation/hook-screenshots/DZXWUnGPXYS_0s.jpg" class="frame" loading="lazy" alt="hook frame"><img src="file:///Users/manoshranjan/ig-research/projects/ai-automation/hook-screenshots/DZXWUnGPXYS_1s.jpg" class="frame" loading="lazy" alt="hook frame"><img src="file:///Users/manoshranjan/ig-research/projects/ai-automation/hook-screenshots/DZXWUnGPXYS_2s.jpg" class="frame" loading="lazy" alt="hook frame"></div>
+    <div class="visual-hook">🎬 Talking head with text overlay</div>
+    <div class="hook-quote">"(no hook captured)"</div>
+    <div class="transcript-box">Watch this. Go to YouTube. Find a successful kids channel. See the views. Here's how much YouTube
+ pays for 1 million views. Now here's what you're going to do. Go to Pixar. Come down to flow. New
+ workflow. Video. You're going to paste this prompt and if you want to just put flow in the comments,
+ you're going to match my settings and then generate. And in just a few minutes you get a video that
+ looks like this. Then just upload that to YouTube and start bringing in the money. So let me know
+ know what else you want to see in the comments and be sure to follow for more.</div>
+    <div class="why-box">
+      <div class="why-title">Why it worked</div>
+      <ul><li>Short, punchy hook (≤12 words) minimizes scroll-past risk</li></ul>
+    </div>
+    <div class="caption-preview">quiscreatesVerified 4 wComment “flow” for the template #picsartflow #aiautomation #aitools #aimoneyhack #facelesscontent</div>
+    <a class="post-link" href="https://www.instagram.com/p/DZXWUnGPXYS/" target="_blank">Open on Instagram →</a>
+  </div>
+
+  <div class="post-card">
+    <div class="post-rank">#5</div>
+    <div class="post-head">
+      <div class="post-author">@nicholas.puru</div>
+      <div class="post-type">reel</div>
+    </div>
+    <div class="post-stats">
+      <span>❤️ 1</span>
+      <span>👁 45.0K</span>
+      <span>💬 484</span>
+      <span class="eng">⚡ 45.5K engagement</span>
+    </div>
+    <div class="frames"><img src="file:///Users/manoshranjan/ig-research/projects/ai-automation/hook-screenshots/DUbDwC8jj_h_0s.jpg" class="frame" loading="lazy" alt="hook frame"><img src="file:///Users/manoshranjan/ig-research/projects/ai-automation/hook-screenshots/DUbDwC8jj_h_1s.jpg" class="frame" loading="lazy" alt="hook frame"><img src="file:///Users/manoshranjan/ig-research/projects/ai-automation/hook-screenshots/DUbDwC8jj_h_2s.jpg" class="frame" loading="lazy" alt="hook frame"></div>
+    <div class="visual-hook">🎬 Talking head with text overlay</div>
+    <div class="hook-quote">"(no hook captured)"</div>
+    <div class="transcript-box">While it just dropped the Chrome extension and it can do your job for you, it's an AI that
+ lives inside your browser and it is completely free and it takes 60 seconds to install.
+ It can see whatever page that you are on, it can answer questions about it and even take
+ actions for you.
+ But it's best feature is the record a workflow where you start recording how you actually
+ do something like where you click, what you type and it saves it as an automation so that
+ it can do the process autonomously for you whenever you want.
+ So if you spend 20 minutes researching news in your industry every single day, just show
+ Claude once and it will do it for you.
+ I created a guide on the best ways to use this and the setup guide.
+ Comment extension if you want it.</div>
+    <div class="why-box">
+      <div class="why-title">Why it worked</div>
+      <ul><li>Short, punchy hook (≤12 words) minimizes scroll-past risk</li></ul>
+    </div>
+    <div class="caption-preview">nicholas.puruVerified 21 wComment “EXTENSION” if you want my full setup guide on the best ways to use it and I’ll send it to you 🎁Claude just released a Chrome extension that lives in your browser, completely free, and …</div>
+    <a class="post-link" href="https://www.instagram.com/p/DUbDwC8jj_h/" target="_blank">Open on Instagram →</a>
+  </div>
+
+  <div class="post-card">
+    <div class="post-rank">#6</div>
+    <div class="post-head">
+      <div class="post-author">@nick_saraev</div>
+      <div class="post-type">reel</div>
+    </div>
+    <div class="post-stats">
+      <span>❤️ 1</span>
+      <span>👁 22.0K</span>
+      <span>💬 285</span>
+      <span class="eng">⚡ 22.3K engagement</span>
+    </div>
+    <div class="frames"><img src="file:///Users/manoshranjan/ig-research/projects/ai-automation/hook-screenshots/DaVOUy1SD3N_0s.jpg" class="frame" loading="lazy" alt="hook frame"><img src="file:///Users/manoshranjan/ig-research/projects/ai-automation/hook-screenshots/DaVOUy1SD3N_1s.jpg" class="frame" loading="lazy" alt="hook frame"><img src="file:///Users/manoshranjan/ig-research/projects/ai-automation/hook-screenshots/DaVOUy1SD3N_2s.jpg" class="frame" loading="lazy" alt="hook frame"></div>
+    <div class="visual-hook">🎬 Talking head with text overlay</div>
+    <div class="hook-quote">"(no hook captured)"</div>
+    <div class="transcript-box">Podfable 5 just came back, and somebody's already leaked the entire system prompt on the internet.
+ And this isn't some basic prompt.
+ It's 120,000 characters long, over 1,500 lines, and it covers the exact set of instructions
+ and anthropic uses to control how their most powerful model thinks, plans, and gets things done.
+ And the best part is you can take these exact instructions and inject them into cheaper,
+ open-source models, like GLM 5.2, or Kimee Cave 2.7.
+ So they follow the same playbook that a anthropic built for the world's best AI model.
+ This significantly improves results and allows you to get the best of both worlds.
+ Want it for yourselves?
+ Just comment "Fable" and I'll send you guys the link directly.</div>
+    <div class="why-box">
+      <div class="why-title">Why it worked</div>
+      <ul><li>Comment/DM-bait CTA drives algorithmic engagement</li><li>Named framework signals authority and repeatability</li><li>Short, punchy hook (≤12 words) minimizes scroll-past risk</li></ul>
+    </div>
+    <div class="caption-preview">nick_saraevVerified 5 dComment "CLAUDE" to get Claude Fable 5's leaked system prompt. Claude Fable 5 just came back, and someone has already leaked its entire system prompt online.And this isn't some basic prompt. It's 1…</div>
+    <a class="post-link" href="https://www.instagram.com/nick_saraev/reel/DaVOUy1SD3N/" target="_blank">Open on Instagram →</a>
+  </div>
+</div>
+
+<div class="section-title">Winning Patterns</div>
+<div class="patterns-grid">
+  <div class="pattern-card">
+    <h3>Format breakdown</h3>
+    <p>28 reels (70%) vs 12 images/carousels. Reels dominate — spoken hooks and motion drive this niche.</p>
+  </div>
+  <div class="pattern-card">
+    <h3>Comment-bait CTAs</h3>
+    <p>10 of 40 top posts (25%) use a "comment a word" or DM-based CTA — this is the single most repeatable engagement lever in the data.</p>
+  </div>
+  <div class="pattern-card">
+    <h3>Hook analysis</h3>
+    <p>Average hook length: 0 words. 0 posts open with a question-format hook, creating an immediate open loop.</p>
+  </div>
+  <div class="pattern-card">
+    <h3>Content themes</h3>
+    <p>Niche: AI automation agency, AI tools, AI news, AI virality (ClientPilot-aligned). Winning posts consistently pair a specific, credible claim (numbers, named frameworks) with a fast visual or spoken payoff in the first 3 seconds.</p>
+  </div>
+</div>
+
+<footer>
+  Generated by the Instagram Research Tool · Reverse-engineered, not guessed.
+</footer>
+
+</body>
+</html>

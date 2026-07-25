@@ -1,0 +1,10 @@
+ Podfable 5 just came back, and somebody's already leaked the entire system prompt on the internet.
+ And this isn't some basic prompt.
+ It's 120,000 characters long, over 1,500 lines, and it covers the exact set of instructions
+ and anthropic uses to control how their most powerful model thinks, plans, and gets things done.
+ And the best part is you can take these exact instructions and inject them into cheaper,
+ open-source models, like GLM 5.2, or Kimee Cave 2.7.
+ So they follow the same playbook that a anthropic built for the world's best AI model.
+ This significantly improves results and allows you to get the best of both worlds.
+ Want it for yourselves?
+ Just comment "Fable" and I'll send you guys the link directly.

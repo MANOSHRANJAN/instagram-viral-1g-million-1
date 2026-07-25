@@ -1,0 +1,8 @@
+ This free Claude extension lets you switch between Claude, Chachi BT, and Gemini, the second any of them hits a rate limit.
+ Here's how it works.
+ The moment your Claude chat gets too long or it hits its daily limit, just click "Save Context."
+ It reads your entire conversation and creates a context summary, capturing every message, relevant memory, and custom instruction, and turning all that into one bundle.
+ Then you switch to your next AI, Chachi BT, or Gemini, and just load that summary in.
+ It'll automatically inject everything instantly so that your conversation can continue right where you left off, like nothing ever happened.
+ And the best part, it's completely free to use.
+ So if you want to try this for yourselves, just comment "Context" and I'll send you the link directly.

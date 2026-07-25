@@ -1,0 +1,12 @@
+ Last month, I made over $139,000 in profit by building AI automation systems for businesses,
+ and these are the exact two tools that I use to make all of my workflows.
+ First up, we have Make.com. It's a beginner-friendly no-code automation tool that lets you connect and
+ share data across apps like Chatsheet BT, Gmail, and LinkedIn without having to write a single line of
+ code. Then, there's NADen, which is better for developers or those who want to build more complex
+ systems. It lets you create automated workflows that can do pretty much anything. In the crazy part,
+ it's completely open-source and 100% free. You can self-host NADen and run 100,000 workflows
+ for less than $10. Plus, it even lets you create AI agents that add code to your automations,
+ making everything possible super quickly. I've created a step-by-step video series that teaches
+ you how to build powerful automations using these two tools. And I also run an exclusive community
+ where I personally help people get their very first paying automation customer in under 90 days
+ guaranteed. So, if you guys want some of these, just comment "automation" and I'll DM you the video guides plus an invite to my exclusive community.

@@ -1,0 +1,102 @@
+{
+  "topic": "AI website builder for plumbers",
+  "locked_avatar": "Mike, 38, owns a 2-truck plumbing business, losing leads to voicemail, scared of tech but desperate for more jobs",
+  "variations": [
+    {
+      "id": "v1",
+      "pattern_used": "Hook formula: Still-Doing Loss-Frame (Template 1) + Skeleton: Hormozi Hook → Question → Hammer → Example → Explanation",
+      "hook": "Still letting plumbing calls go to voicemail in 2026?",
+      "hammer": "That missed call just booked your competitor's truck.",
+      "script": "Still letting plumbing calls go to voicemail in 2026?\nThat missed call just booked your competitor's truck.\nHere's the question: a $4,000 water-heater job rings at 7pm and you're under a sink. What happens?\nRight now? Nothing. They call the next guy.\nWatch this. I build plumbers a dead-simple AI website that answers every call, texts the customer back in 9 seconds, and drops the job on your calendar.\nNo app to learn. No tech headache.\nOne plumber I set up booked 6 extra jobs his first week.\nThe play is: stop chasing your phone, start booking trucks.\nComment PLUMBER and I'll DM you the exact build, free.",
+      "b_roll": [
+        "0-2s: bright white phone screen, bold black 'MISSED CALL' text, easy to read",
+        "2-4s: split screen — your phone dark vs competitor's truck pulling up",
+        "4-6s: hand under a sink, phone buzzing on the floor unanswered",
+        "6-8s: clean screen recording of AI text 'On my way after this job' sending",
+        "8-10s: calendar filling with 6 booked jobs, green checkmarks",
+        "10-12s: creator pointing at camera, 'Comment PLUMBER' caption in big bright text"
+      ],
+      "sfx_track": [
+        "0.5s: phone vibrate buzz",
+        "1.0s: voicemail beep",
+        "3.2s: cash-register ka-ching on 'booked your competitor's truck'",
+        "6.5s: text-send whoosh",
+        "9.0s: calendar 'pop' stack as jobs land",
+        "11.5s: button-click on the CTA"
+      ],
+      "caption": "Your phone is costing you trucks. Every missed call is a job your competitor just booked. This AI site picks up so you don't have to. Comment PLUMBER for the build 👇 #plumbingbusiness #plumberlife #aiforbusiness #smallbusinesstips #localbusiness #missedcall",
+      "title_options": [
+        "Plumbers: stop losing jobs to voicemail",
+        "Your missed call = competitor's $4k job",
+        "The AI site that books trucks for you"
+      ],
+      "cta": "Comment PLUMBER and I'll DM you the exact build, free.",
+      "music_style_hint": "punchy trending hip-hop with a hard beat drop on the hammer line",
+      "predicted_top_comment": "How much does this cost to set up?"
+    },
+    {
+      "id": "v2",
+      "pattern_used": "Hook formula: Myth-Bust Contrarian (Template 3) + Skeleton: Problem → Proof → Payoff (built for silent-alignment shares)",
+      "hook": "Your fancy plumbing website is dead in 2026.",
+      "hammer": "It looks pretty and books you zero jobs.",
+      "script": "Your fancy plumbing website is dead in 2026.\nIt looks pretty and books you zero jobs.\nHere's the problem: nobody fills out forms anymore. They call. And when you miss the call, you lose the job.\nProof? I tracked one plumber for 30 days. 22 missed calls. 14 went straight to a competitor. That's real money gone.\nSo I rebuilt his site as a lead machine. AI answers the phone, texts back instantly, books the slot for him.\nThose 14 lost jobs turned into 9 booked the next month.\nNo fluff — this is what actually works now.\nComment TRUCKS and I'll send you the full setup, free.",
+      "b_roll": [
+        "0-2s: bright screen, a 'pretty' plumber website with a big red X stamped over it",
+        "2-4s: phone ringing, then 'MISSED' flashing in bold dark-on-white text",
+        "4-6s: clean tally graphic — 22 missed, 14 lost, numbers counting up",
+        "6-8s: stack of cash sliding off-screen on '14 went to a competitor'",
+        "8-10s: screen recording of AI auto-text + booking confirmation",
+        "10-12s: before/after counter '14 lost → 9 booked', creator nodding at camera"
+      ],
+      "sfx_track": [
+        "0.4s: record-scratch on 'dead in 2026'",
+        "2.0s: phone ring cut to dead tone",
+        "4.5s: counter tick-tick-tick as numbers climb",
+        "6.2s: cash whoosh out",
+        "8.5s: text-send ding + calendar pop",
+        "11.0s: confident snap on the CTA"
+      ],
+      "caption": "Hot take: your plumbing website is just a brochure. It doesn't book a single job. Here's the proof and the fix. Comment TRUCKS for the full setup 👇 #plumber #plumbinglife #tradesman #aiautomation #smallbiz #leadgen",
+      "title_options": [
+        "Your plumbing website is basically dead",
+        "22 missed calls, 14 lost jobs (real data)",
+        "Stop paying for a website that books $0"
+      ],
+      "cta": "Comment TRUCKS and I'll send you the full setup, free.",
+      "music_style_hint": "tense cinematic riser that snaps into a confident beat on the payoff",
+      "predicted_top_comment": "Does this work for HVAC and electrical too?"
+    },
+    {
+      "id": "v3",
+      "pattern_used": "Hook formula: Specific-Scenario Relatable (Template 4) + Skeleton: Story → Stakes → Solution (engineered for the 1:1 send)",
+      "hook": "It's 7:14pm. A $4,000 job just called you.",
+      "hammer": "You're elbow-deep in a sink and can't pick up.",
+      "script": "It's 7:14pm. A $4,000 water-heater job just called you.\nYou're elbow-deep in a sink and can't pick up.\nBy the time you wipe your hands, it's voicemail. By 7:20, they've already called the next plumber.\nThat one missed call? Gone. That's a truck payment.\nHere's how you still book it.\nI build plumbers a dead-simple AI website that picks up every call, texts the customer 'on my way after this job,' and locks in the time.\nYou never touch your phone. The job's just sitting there in the morning.\nSteal this before your competitor does.\nComment BOOKED and I'll DM you the build, free.",
+      "b_roll": [
+        "0-2s: bright phone screen showing '7:14 PM — Incoming Call $4,000 job' in big readable text",
+        "2-4s: plumber's hands deep in a sink, phone buzzing just out of reach",
+        "4-6s: screen flips to 'Voicemail' then '7:20 — Call ended', clock ticking",
+        "6-8s: AI auto-text sending 'On my way after this job' to the customer",
+        "8-10s: morning shot — calendar shows the job booked, coffee in hand",
+        "10-12s: creator leaning in, bright 'Comment BOOKED' text on screen"
+      ],
+      "sfx_track": [
+        "0.5s: phone ring starts",
+        "2.2s: muffled buzz as hands stay in the sink",
+        "4.0s: voicemail beep + clock tick",
+        "6.0s: soft text-send whoosh",
+        "8.5s: gentle 'job booked' chime",
+        "11.0s: click on the CTA tap"
+      ],
+      "caption": "7:14pm. Big job calls. You're under a sink. We've all been there. Here's how you book it without ever touching your phone. Send this to the partner who keeps missing calls. Comment BOOKED for the build 👇 #plumberlife #plumbingbusiness #tradeslife #aiforplumbers #smallbusiness #booked",
+      "title_options": [
+        "7:14pm: the $4k call you can't answer",
+        "Book the job without touching your phone",
+        "How plumbers stop losing the 7pm call"
+      ],
+      "cta": "Comment BOOKED and I'll DM you the build, free.",
+      "music_style_hint": "warm cinematic build that softens into a hopeful resolve on the solution",
+      "predicted_top_comment": "This is literally me every single night 😩"
+    }
+  ]
+}
