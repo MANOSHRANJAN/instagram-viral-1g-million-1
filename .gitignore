@@ -24,6 +24,7 @@ ig-research/models/
 *.wav
 *.mp4
 *.mov
+*.m4a
 
 # ---- Scrape data: keep structure but not heavy media ----
 research/**/post-screenshots/
