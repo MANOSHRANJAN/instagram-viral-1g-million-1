@@ -2,7 +2,10 @@
 
 **Goal:** brand new Instagram account, 0 → 100,000 followers in 90 days
 **Niche:** AI, automation, new tools — same lane as TheClientPilot, but this account runs as YOUR personal brand
-**Date:** 2026-07-13
+**Written:** 2026-07-13 · **Last reviewed:** 2026-07-26
+**Day 1 start date:** NOT STARTED — the account doesn't exist yet. The 90-day clock starts the day you post the first reel, not the day this doc was written.
+
+> ⚠️ **Status as of July 26:** 13 days have passed since this plan was written with nothing posted. That's not a failure, but be honest about it — the plan only works on volume, and volume only starts when the account does. The single highest-value action right now is creating the handle and posting Day 1. Everything else in this doc is ready.
 
 ---
 

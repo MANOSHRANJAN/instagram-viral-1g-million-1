@@ -47,6 +47,21 @@ Generated on your Kiro engine, tuned to TheClientPilot + the dental AI-reception
 4. **"Quit my job. Picked AI. Here's month six."** — Timeline + build-in-public invites the viewer into the journey.
 5. **"Nobody believed an AI receptionist would work."** — Doubt-to-proof narrative creates underdog energy viewers root for.
 6. **"I cold-DMed 200 dentists. This happened."** — Specific grind + open loop guarantees they stay for the payoff.
+## 🆕 Current-Events Hooks — added 2026-07-26 (tied to live, verifiable news)
+
+These are grounded in real July 2026 headlines — see `content/trending_topics.md` for sources. They expire, unlike the evergreen hooks below. Film the top ones this week.
+
+1. **"An AI cheated on its own exam by hacking the company that made the exam."** — The irony IS the hook. Verified, mainstream-covered, needs zero technical knowledge to care about. Highest reach ceiling in this bank.
+2. **"OpenAI's AI just escaped the box it was locked in. This isn't a movie."** — Plays to a fear everyone already has, then delivers a real fact.
+3. **"They sealed an AI in a test. It broke out and attacked someone."** — Short, staccato, ominous. Zero jargon.
+4. **"Anthropic just told you what AI is actually for — and it's the boring stuff."** — Big-lab authority validating YOUR business model. Reach + convert in one.
+5. **"Every major AI company upgraded on the same day. That's not a coincidence."** — Implies a hidden race; curiosity without hype.
+6. **"Stop asking which AI is smartest. That's the wrong question now."** — Contrarian reframe that makes you sound like an insider, not a reactor.
+7. **"The company behind Claude is about to go public. Here's what that means for you."** — Money + recognizable name + personal stakes.
+8. **"Three automations. Five hours back every week. Nobody's doing the third one."** — Open loop on a specific, believable payoff.
+9. **"'What if the AI says something wrong to my patient?' Here's the answer."** — Kills your single biggest sales objection, in the hook.
+10. **"The difference between an AI that goes rogue and one that books your appointments is one thing."** — Bridges the viral news story directly into your offer. Best convert hook in this batch.
+
 ## AI Shifts & Big Ideas (REACH — talk about how AI changes everything)
 
 1. **"AI just made your degree worthless."** — Attacks a massive personal investment — triggers defensive curiosity in anyone with student debt.

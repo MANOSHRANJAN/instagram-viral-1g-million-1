@@ -338,10 +338,14 @@ function renderGoal() {
   document.getElementById('goalCurrent').textContent = current.toLocaleString();
   document.getElementById('goalTarget').textContent = g.target.toLocaleString();
 
-  const start = new Date(g.startDate);
-  const now = new Date();
-  const dayNum = Math.max(1, Math.min(g.durationDays, Math.floor((now - start) / 86400000) + 1));
-  document.getElementById('goalDay').textContent = `Day ${dayNum}`;
+  if (!g.startDate) {
+    document.getElementById('goalDay').textContent = 'Not started';
+  } else {
+    const start = new Date(g.startDate);
+    const now = new Date();
+    const dayNum = Math.max(1, Math.min(g.durationDays, Math.floor((now - start) / 86400000) + 1));
+    document.getElementById('goalDay').textContent = `Day ${dayNum}`;
+  }
   document.getElementById('goalNote').textContent = g.note;
 }
 
